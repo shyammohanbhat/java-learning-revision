@@ -55,23 +55,12 @@ public class ListNode {
     }
 
     /*
-     * Time Complexity: O(n)
+     * Time Complexity: O(1)
      */
-    public ListNode deleteNode(ListNode head, ListNode node){
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-
-        ListNode curr = dummy;
-
-        while (curr.next != null){
-            if(curr.next == node){
-                curr.next = curr.next.next;
-                break;
-            }
-            curr = curr.next;
-        }
-
-        return dummy.next;
+    public void deleteNode(ListNode node) {
+        // Assumption: node is NOT the last node
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 
     public ListNode deleteHeadNode(ListNode head){
@@ -111,7 +100,7 @@ public class ListNode {
 
         System.out.println("------------------------------------");
 
-        l=listNode.deleteNode(l, node);
+        listNode.deleteNode(node);
         listNode.printListNode(l);
 
         System.out.println("------------------------------------");

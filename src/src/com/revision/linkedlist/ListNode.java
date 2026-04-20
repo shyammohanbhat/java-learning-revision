@@ -84,7 +84,7 @@ public class ListNode {
         return  head;
     }
 
-    public static void main() {
+    public static void main(String[] args) {
         ListNode listNode = new ListNode();
         ListNode l = new ListNode(10);
         ListNode node = new ListNode(5);

@@ -14,7 +14,7 @@ import java.io.Serializable;
  *
  */
 public class Singleton implements Serializable, Cloneable {
-    public static Singleton instance;
+    public static volatile Singleton instance;
 
     private Singleton(){
         //Solving reflection issue
@@ -44,5 +44,6 @@ public class Singleton implements Serializable, Cloneable {
                 }
             }
         }
+        return instance;
     }
 }

@@ -1,4 +1,4 @@
-package revision.designpattern.factory;
+package com.revision.designpattern.factory;
 
 public class EmailFactory extends NotificationFactory{
     @Override

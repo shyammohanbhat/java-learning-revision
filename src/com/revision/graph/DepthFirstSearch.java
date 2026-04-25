@@ -4,7 +4,7 @@ import java.util.*;
 
 public class DepthFirstSearch {
 
-    public static void main() {
+    public static void main(String[] args) {
         Map<Integer, List<Integer>> graph = new HashMap<>();
         graph.put(1, Arrays.asList(2, 3));
         graph.put(2, Arrays.asList(1, 4));

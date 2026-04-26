@@ -23,6 +23,6 @@ classDiagram
     PaymentStrategy <|.. UpiPayment : implements
     PaymentContext --> PaymentStrategy : uses
     
-    note for PaymentContext : Context class that uses the strategy to execute payment
+    note for PaymentContext "Context class that uses the strategy to execute payment"
     
-    note for PaymentStrategy : Strategy Pattern Components:\n- Strategy: PaymentStrategy (interface)\n- Concrete Strategies: CardPayment, UpiPayment\n- Context: PaymentContext
+    note for PaymentStrategy "Strategy Pattern Components: Strategy interface, Concrete Strategies (CardPayment, UpiPayment), Context (PaymentContext)"

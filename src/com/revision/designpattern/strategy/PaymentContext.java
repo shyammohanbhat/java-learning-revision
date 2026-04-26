@@ -1,0 +1,15 @@
+package com.revision.designpattern.strategy;
+
+//Context class
+public class PaymentContext {
+
+    private PaymentStrategy paymentStrategy;
+
+    public PaymentContext(PaymentStrategy paymentStrategy){
+        this.paymentStrategy = paymentStrategy;
+    }
+
+    public void executePayment(int amount){
+        paymentStrategy.pay(amount);
+    }
+}

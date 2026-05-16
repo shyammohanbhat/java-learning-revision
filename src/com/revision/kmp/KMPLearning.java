@@ -17,18 +17,36 @@ public class KMPLearning {
 
     }
 
+    /*
+        while (i < m) {
+            if (match) {
+                expand
+            } else {
+                fallback using lps[length - 1]
+                if(length ==0 ) lps[i] = 0;
+            }
+        }
+     */
+
     public static int[] buildLPS(String s){
-        int len = 0;
-        int n = s.length();
-        int[] lps = new int[n];
-        for(int i=1; i<n; i++){
-            while(len>0 && s.charAt(i) != s.charAt(len)){
-                len = lps[len-1];
+        int m = s.length();
+        int[] lps = new int[m];
+        int length = 0;
+        int i = 1;
+
+        while(i<m){
+            if(s.charAt(i) == s.charAt(length)){
+                length++;
+                lps[i] = length;
+                i++;
+            } else {
+                if(length > 0){
+                    length = lps[length-1];
+                } else {
+                    lps[i] = 0;
+                    i++;
+                }
             }
-            if(s.charAt(i) == s.charAt(len)){
-                len++;
-            }
-            lps[i] = len;
         }
 
         return lps;
